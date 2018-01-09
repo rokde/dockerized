@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=8.9
+VERSION=9.3.0
 
 docker run --rm \
     --interactive \

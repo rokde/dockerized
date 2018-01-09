@@ -2,6 +2,7 @@
 
 docker run --rm \
     --interactive \
+    --name rancherize \
     --volume $HOME/.rancherize:/home/rancherize/.rancherize \
     --volume /var/run/docker.sock:/var/run/docker.sock \
     --volume $(pwd):$(pwd) \

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "Purging all unused images and container"
+docker rmi "$(docker images -f dangling=true -q)"
+docker rm "$(docker ps --no-trunc -aq)"

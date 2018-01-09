@@ -1,0 +1,11 @@
+#!/bin/bash
+
+docker run --rm \
+    --interactive \
+    --volume $HOME/.rancherize:/home/rancherize/.rancherize \
+    --volume /var/run/docker.sock:/var/run/docker.sock \
+    --volume $(pwd):$(pwd) \
+    --workdir $(pwd) \
+    -e "USER_ID=$(id -u)" \
+    -e "GROUP_ID=$(id -g)" \
+    ipunktbs/rancherize:2-stable "$@"

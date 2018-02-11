@@ -8,7 +8,7 @@ docker run --rm \
     --net host \
     --volume `pwd`:/app \
     --volume ~/.cache:/.cache \
-    --volume ~/.yarnrc:/.yarnrc
+    --volume ~/.yarnrc:/.yarnrc \
     --workdir /app \
     --user $(id -u):$(id -g) \
     --entrypoint yarn \

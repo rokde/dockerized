@@ -1,12 +1,14 @@
 #!/bin/bash
 
-VERSION=9.3.0
+VERSION=9.5.0
 
 docker run --rm \
     --interactive \
     --tty \
     --net host \
     --volume `pwd`:/app \
+    --volume ~/.cache:/.cache \
+    --volume ~/.yarnrc:/.yarnrc
     --workdir /app \
     --user $(id -u):$(id -g) \
     --entrypoint yarn \

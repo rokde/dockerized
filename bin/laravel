@@ -1,0 +1,7 @@
+#!/bin/bash
+
+docker run --rm \
+    --interactive \
+    --tty \
+    --volume $(pwd):/app \
+    mc388/docker-laravel-installer

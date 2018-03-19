@@ -6,7 +6,7 @@ docker run --rm \
     --interactive \
     --tty \
     --net host \
-    --volume `pwd`:/app \
-    --workdir /app \
+    --volume `pwd`:/opt \
+    -w /opt \
     --user $(id -u):$(id -g) \
     composer:$VERSION "$@"

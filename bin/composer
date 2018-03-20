@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=1.6
+. docker-images
 
 docker run --rm \
     --interactive \
@@ -9,4 +9,4 @@ docker run --rm \
     --volume `pwd`:/opt \
     -w /opt \
     --user $(id -u):$(id -g) \
-    composer:$VERSION "$@"
+    $COMPOSER_IMAGE "$@"

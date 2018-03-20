@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=9
+. docker-images
 
 docker run --rm \
     --interactive \
@@ -13,4 +13,4 @@ docker run --rm \
     --workdir /app \
     --user $(id -u):$(id -g) \
     --entrypoint yarn \
-    node:$VERSION "$@"
+    $NODE_IMAGE "$@"

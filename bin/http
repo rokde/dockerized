@@ -1,9 +1,11 @@
 #!/bin/bash
 
+. docker-images
+
 docker run --rm \
     --interactive \
     --tty \
     --net host \
     --volume `pwd`:/app \
     --workdir /app \
-    alpine/httpie "$@"
+    $HTTPIE_IMAGE "$@"

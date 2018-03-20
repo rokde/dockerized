@@ -1,5 +1,7 @@
 #!/bin/bash
 
+. docker-images
+
 docker run --rm \
     --interactive \
     --name rancherize \
@@ -9,4 +11,4 @@ docker run --rm \
     --workdir $(pwd) \
     -e "USER_ID=$(id -u)" \
     -e "GROUP_ID=$(id -g)" \
-    ipunktbs/rancherize:2-stable "$@"
+    $RANCHERIZE_IMAGE "$@"

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+COMPOSER_IMAGE="composer:1.6"
+HTTPIE_IMAGE="alpine/httpie:latest"
+NODE_IMAGE="node:9"
+PHP_IMAGE="php:7.2.2"
+RANCHERIZE_IMAGE="ipunktbs/rancherize:2-stable"
+

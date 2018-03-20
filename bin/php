@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=7.2.2
+. docker-images
 
 docker run --rm \
     --interactive \
@@ -9,4 +9,4 @@ docker run --rm \
     --volume `pwd`:/app \
     --workdir /app \
     --user $(id -u):$(id -g) \
-    php:$VERSION "$@"
+    $PHP_IMAGE "$@"

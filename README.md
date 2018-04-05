@@ -14,7 +14,7 @@ To install:
 
 ```bash
 
-git clone https://github.com/rokde/dockerized.git $HOME/dockerized
+git clone https://github.com/ipunkt/dockerized.git $HOME/dockerized
 
 ```
 

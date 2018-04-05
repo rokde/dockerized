@@ -6,8 +6,9 @@ docker run --rm \
     --interactive \
     --tty \
     --net host \
-    --volume `pwd`:/app \
-    --workdir /app \
-    --user $(id -u):$(id -g) \
+    --volume `pwd`:/src:rw \
+    --workdir /src \
+    -e "PUID=$(id -u)" \
+    -e "PGID=$(id -g)" \
     --entrypoint node \
     $NODE_IMAGE "$@"

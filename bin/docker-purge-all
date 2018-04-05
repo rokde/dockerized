@@ -1,5 +1,4 @@
 #!/bin/bash
 
-echo "Purging all unused images and container"
-docker rmi `docker images -q` -f
-docker rm `docker ps --no-trunc -aq` -f
+echo "Purging all unused images, containers, networks and build cache"
+docker system prune --force

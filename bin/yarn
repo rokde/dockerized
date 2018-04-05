@@ -6,11 +6,12 @@ docker run --rm \
     --interactive \
     --tty \
     --net host \
-    --volume `pwd`:/app \
+    --volume `pwd`:/src:rw \
     --volume ~/.cache:/.cache \
     --volume ~/.yarnrc:/.yarnrc \
     --volume ~/.yarn:/.yarn \
-    --workdir /app \
-    --user $(id -u):$(id -g) \
+    --workdir /src \
+    -e "PUID=$(id -u)" \
+    -e "PGID=$(id -g)" \
     --entrypoint yarn \
     $NODE_IMAGE "$@"

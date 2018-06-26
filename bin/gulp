@@ -1,0 +1,17 @@
+#!/bin/bash
+
+. docker-images
+
+docker run --rm \
+    --interactive \
+    --tty \
+    --net host \
+    --volume `pwd`:/src:rw \
+    --volume ~/.cache:/.cache \
+    --volume ~/.yarnrc:/.yarnrc \
+    --volume ~/.yarn:/.yarn \
+    --workdir /src \
+    -e "PUID=$(id -u)" \
+    -e "PGID=$(id -g)" \
+    --entrypoint gulp \
+    $NODE_IMAGE "$@"

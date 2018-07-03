@@ -2,8 +2,6 @@
 
 . docker-images
 
-RANCHERIZE_LATEST="ipunktbs/rancherize:latest"
-
 docker pull $RANCHERIZE_LATEST
 
 docker run --rm \

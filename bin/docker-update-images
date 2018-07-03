@@ -8,3 +8,4 @@ docker pull $HTTPIE_IMAGE
 docker pull $NODE_IMAGE
 docker pull $PHP_IMAGE
 docker pull $RANCHERIZE_IMAGE
+docker pull $RANCHERIZE_LATEST

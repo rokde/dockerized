@@ -5,4 +5,4 @@ HTTPIE_IMAGE="alpine/httpie:latest"
 NODE_IMAGE="mkenney/npm:latest"
 PHP_IMAGE="chialab/php:7.2"
 RANCHERIZE_IMAGE="ipunktbs/rancherize:2-stable"
-
+RANCHERIZE_LATEST="ipunktbs/rancherize:latest"

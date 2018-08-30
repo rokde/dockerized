@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COMPOSER_IMAGE="composer:1.6"
+COMPOSER_IMAGE="composer:1.7"
 HTTPIE_IMAGE="alpine/httpie:latest"
 NODE_IMAGE="mkenney/npm:latest"
 PHP_IMAGE="chialab/php:7.2"

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+. docker-images
+
+docker run --rm \
+    --interactive \
+    --tty \
+    --net host \
+    --volume `pwd`:/root:rw \
+    -e "PUID=$(id -u)" \
+    -e "PGID=$(id -g)" \
+    $GTT_IMAGE "$@"

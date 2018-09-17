@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. docker-images
+#. docker-images
 
 docker run --rm \
     --interactive \
@@ -9,4 +9,5 @@ docker run --rm \
     --volume `pwd`:/app \
     --workdir /app \
     --user $(id -u):$(id -g) \
-    $PHP_IMAGE "$@"
+    --entrypoint php \
+    "$PHP_IMAGE" "$@"

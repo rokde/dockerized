@@ -9,5 +9,5 @@ docker run --rm \
     --volume `pwd`:/app \
     --workdir /app \
     --user $(id -u):$(id -g) \
-    --entrypoint phpcbf \
-    "$PHPCS_IMAGE" "$@"
+    --entrypoint phpunit \
+    "$PHPUNIT_IMAGE" "$@"

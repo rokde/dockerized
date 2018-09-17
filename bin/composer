@@ -9,4 +9,5 @@ docker run --rm \
     --volume `pwd`:/opt \
     -w /opt \
     --user $(id -u):$(id -g) \
-    $COMPOSER_IMAGE "$@"
+    --entrypoint composer \
+    "$COMPOSER_IMAGE" "$@"

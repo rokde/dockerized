@@ -9,4 +9,5 @@ docker run --rm \
     --volume `pwd`:/app \
     --workdir /app \
     --user $(id -u):$(id -g) \
-    "$PHPCS_IMAGE" phpcs "$@"
+    --entrypoint phpcs \
+    "$PHPCS_IMAGE" "$@"

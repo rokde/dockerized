@@ -3,10 +3,9 @@
 . docker-images
 
 echo "Updating all dockerized images"
-docker pull $COMPOSER_IMAGE
+docker pull $LARAVEL_DOCKER_IMAGE
 docker pull $HTTPIE_IMAGE
 docker pull $NODE_IMAGE
-docker pull $PHP_IMAGE
-docker pull $PHPCS_IMAGE
 docker pull $RANCHERIZE_IMAGE
 docker pull $RANCHERIZE_LATEST
+docker pull $GTT_IMAGE

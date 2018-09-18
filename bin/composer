@@ -2,11 +2,14 @@
 
 . docker-images
 
+mkdir -p /tmp/.composer
+
 docker run --rm \
     --interactive \
     --tty \
     --net host \
     --volume `pwd`:/opt \
+    --volume /tmp/.composer:/.composer \
     -w /opt \
     --user $(id -u):$(id -g) \
     --entrypoint composer \

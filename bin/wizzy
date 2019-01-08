@@ -1,0 +1,13 @@
+#!/bin/bash
+
+. docker-images
+
+echo docker run --rm \
+    --interactive \
+    --tty \
+    --net host \
+	 --volume "$(pwd):/app" \
+    --workdir /app \
+    --user "$(id -u):$(id -g)" \
+	 --entrypoint wizzy \
+    "${WIZZY_IMAGE}" "$@"

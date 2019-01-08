@@ -2,7 +2,7 @@
 
 . docker-images
 
-echo docker run --rm \
+docker run --rm \
     --interactive \
     --tty \
     --net host \

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+. docker-images
+
+docker run --rm \
+    --init \
+    --tty \
+    --volume `pwd`:/mnt/src:cached \
+    --workdir /mnt/src \
+    --user $(id -u):$(id -g) \
+    "$PHP_COMPATIBILTY_IMAGE" "$@"

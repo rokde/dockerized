@@ -2,6 +2,9 @@
 
 . docker-images
 
+# example options to check php code for version 7.2:
+# phpco  -p --colors --extensions=php --runtime-set testVersion 7.2 .
+
 docker run --rm \
     --init \
     --tty \

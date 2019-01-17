@@ -1,0 +1,14 @@
+#!/bin/bash
+
+. docker-images
+
+# example options to check php code for version 7.2:
+# phpco -p --colors --extensions=php --runtime-set testVersion 7.2 .
+
+docker run --rm \
+    --init \
+    --tty \
+    --volume `pwd`:/mnt/src:cached \
+    --workdir /mnt/src \
+    --user $(id -u):$(id -g) \
+    "$PHP_COMPATIBILTY_IMAGE" "$@"

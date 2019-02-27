@@ -2,11 +2,19 @@
 
 . docker-images
 
+NPM_GLOBAL_DIR="/tmp/.npm"
+NPM_GLOBAL_CACHE_DIR="/tmp/.cache"
+
+mkdir -p "$NPM_GLOBAL_DIR"
+mkdir -p "$NPM_GLOBAL_CACHE_DIR"
+
 docker run --rm \
     --interactive \
     --tty \
     --net host \
     --volume `pwd`:/src:rw \
+    --volume "$NPM_GLOBAL_DIR":/.npm:rw \
+    --volume "$NPM_GLOBAL_CACHE_DIR":/.cache:rw \
     --workdir /src \
     -e "PUID=$(id -u)" \
     -e "PGID=$(id -g)" \

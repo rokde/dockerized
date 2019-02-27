@@ -18,5 +18,6 @@ docker run --rm \
     --workdir /src \
     -e "PUID=$(id -u)" \
     -e "PGID=$(id -g)" \
+    -u $(id -u):$(id -g) \
     --entrypoint npm \
     $NODE_IMAGE "$@"

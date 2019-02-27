@@ -1,9 +1,9 @@
 #!/bin/bash
 
-LARAVEL_DOCKER_IMAGE="lorisleiva/laravel-docker:latest"
+LARAVEL_DOCKER_IMAGE="lorisleiva/laravel-docker:7.3"
 COMPOSER_IMAGE=$LARAVEL_DOCKER_IMAGE
 HTTPIE_IMAGE="alpine/httpie:latest"
-NODE_IMAGE="mkenney/npm:latest"
+NODE_IMAGE="mkenney/npm:node-11-alpine"
 PHP_IMAGE=$LARAVEL_DOCKER_IMAGE
 PHPCS_IMAGE=$LARAVEL_DOCKER_IMAGE
 PHPUNIT_IMAGE=$LARAVEL_DOCKER_IMAGE

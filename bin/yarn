@@ -2,16 +2,24 @@
 
 . docker-images
 
+NPM_GLOBAL_CACHE_DIR="/tmp/.cache"
+YARN_GLOBAL_DIR="/tmp/.yarn"
+
+mkdir -p "$NPM_GLOBAL_CACHE_DIR"
+mkdir -p "$YARN_GLOBAL_DIR"
+touch "$YARN_GLOBAL_CONFIGURATION_FILE/.yarnrc"
+
 docker run --rm \
     --interactive \
     --tty \
     --net host \
     --volume `pwd`:/src:rw \
-    --volume ~/.cache:/.cache \
-    --volume ~/.yarnrc:/.yarnrc \
-    --volume ~/.yarn:/.yarn \
+    --volume "$NPM_GLOBAL_CACHE_DIR":/.cache:rw \
+    --volume "$YARN_GLOBAL_DIR/.yarnrc":/.yarnrc:rw \
+    --volume "$YARN_GLOBAL_DIR":/.yarn:rw \
     --workdir /src \
     -e "PUID=$(id -u)" \
     -e "PGID=$(id -g)" \
+    -u $(id -u):$(id -g) \
     --entrypoint yarn \
     $NODE_IMAGE "$@"

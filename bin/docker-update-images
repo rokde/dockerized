@@ -9,3 +9,5 @@ docker pull $NODE_IMAGE
 docker pull $RANCHERIZE_IMAGE
 docker pull $RANCHERIZE_LATEST
 docker pull $GTT_IMAGE
+docker pull $WIZZY_IMAGE
+docker pull $PHP_COMPATIBILTY_IMAGE

@@ -9,7 +9,8 @@ docker run --rm \
     --tty \
     --net host \
     --volume `pwd`:/opt \
-    --volume /tmp/.composer:/.composer \
+    --volume /tmp/.composer:/.composer:rw \
+    --volume /tmp/.composer:/composer:rw \
     -w /opt \
     --user $(id -u):$(id -g) \
     --entrypoint composer \

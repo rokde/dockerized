@@ -1,0 +1,13 @@
+#!/bin/bash
+
+. docker-images
+
+DOCKERIZED_ROOT="${HOME}/.dockerized"
+
+NPM_ROOT="${DOCKERIZED_ROOT}/npm"
+NPM_GLOBAL_CACHE_DIR="${NPM_ROOT}/.cache"
+
+YARN_ROOT="${DOCKERIZED_ROOT}/yarn"
+YARN_CACHE_DIR="${YARN_ROOT}/.cache"
+
+YARN_GLOBAL_CONFIGURATION_FILE="${YARN_ROOT}/.yarnrc"

@@ -5,6 +5,9 @@
 if [[ ! -d "$YARN_CACHE_DIR" ]]; then
     mkdir -p "$YARN_CACHE_DIR"
 fi
+if [[ ! -d "$YARN_GLOBAL_DIR" ]]; then
+    mkdir -p "$YARN_GLOBAL_DIR"
+fi
 
 if [[ ! -f "$YARN_GLOBAL_CONFIGURATION_FILE" ]]; then
     touch "$YARN_GLOBAL_CONFIGURATION_FILE"
@@ -16,6 +19,7 @@ docker run --rm \
     --net host \
     --volume `pwd`:/src:rw \
     --volume "$YARN_CACHE_DIR":/.cache:rw \
+    --volume "$YARN_GLOBAL_DIR":/.yarn:rw \
     --volume "$YARN_GLOBAL_CONFIGURATION_FILE":/.yarnrc:rw \
     --workdir /src \
     -e "PUID=$(id -u)" \

@@ -24,5 +24,5 @@ docker run --rm \
     -e "PUID=$(id -u)" \
     -e "PGID=$(id -g)" \
     -u $(id -u):$(id -g) \
-    --entrypoint npm \
+    --entrypoint npx \
     $NODE_IMAGE "$@"

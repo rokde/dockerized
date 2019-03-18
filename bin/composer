@@ -1,16 +1,18 @@
 #!/bin/bash
 
-. docker-images
+. configuration
 
-mkdir -p /tmp/.composer
+if [[ ! -d "$COMPOSER_CACHE_DIR" ]]; then
+    mkdir -p "$COMPOSER_CACHE_DIR"
+fi
 
 docker run --rm \
     --interactive \
     --tty \
     --net host \
     --volume `pwd`:/opt \
-    --volume /tmp/.composer:/.composer:rw \
-    --volume /tmp/.composer:/composer:rw \
+    --volume "$COMPOSER_CACHE_DIR":/.composer:rw \
+    --volume "$COMPOSER_CACHE_DIR":/composer:rw \
     -w /opt \
     --user $(id -u):$(id -g) \
     --entrypoint composer \

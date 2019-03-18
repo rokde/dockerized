@@ -6,8 +6,8 @@ docker run --rm \
     --interactive \
     --tty \
     --net host \
-	 --volume "$(pwd):/repo" \
+    --volume "$(pwd):/repo" \
     --workdir /repo \
     --user "$(id -u):$(id -g)" \
-	 --entrypoint wizzy \
+    --entrypoint wizzy \
     "${WIZZY_IMAGE}" "$@"

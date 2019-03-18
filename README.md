@@ -29,3 +29,39 @@ export PATH=$HOME/dockerized/bin:$PATH
 export PATH=$PATH:$HOME/dockerized/bin
 
 ```
+
+## Supported Commands
+
+### PHP
+
+- php
+- composer
+- phpunit
+- phpco
+- phpcs
+- phpcbf
+
+### Node
+
+- node
+- npm
+- npx
+- yarn
+- gulp
+
+### Docker
+
+- docker-purge-all
+- docker-stop-all
+- docker-update-images
+
+### Rancher
+
+- rancherize
+- rancherize-latest
+
+### Misc
+
+- http
+- gtt
+- wizzy

@@ -1,13 +1,16 @@
 #!/bin/bash
 
-. docker-images
+. configuration
 
-NPM_GLOBAL_DIR="/tmp/.npm"
-NPM_GLOBAL_CACHE_DIR="/tmp/.cache"
-NPM_GLOBAL_CONFIG_DIR="/tmp/.config"
-
-mkdir -p "$NPM_GLOBAL_DIR"
-mkdir -p "$NPM_GLOBAL_CACHE_DIR"
+if [[ ! -d "$NPM_GLOBAL_DIR" ]]; then
+    mkdir -p "$NPM_GLOBAL_DIR"
+fi
+if [[ ! -d "$NPM_CACHE_DIR" ]]; then
+    mkdir -p "$NPM_CACHE_DIR"
+fi
+if [[ ! -d "$NPM_CONFIG_DIR" ]]; then
+    mkdir -p "$NPM_CONFIG_DIR"
+fi
 
 docker run --rm \
     --interactive \
@@ -15,8 +18,8 @@ docker run --rm \
     --net host \
     --volume `pwd`:/src:rw \
     --volume "$NPM_GLOBAL_DIR":/.npm:rw \
-    --volume "$NPM_GLOBAL_CACHE_DIR":/.cache:rw \
-    --volume "$NPM_GLOBAL_CONFIG_DIR":/.config:rw \
+    --volume "$NPM_CACHE_DIR":/.cache:rw \
+    --volume "$NPM_CONFIG_DIR":/.config:rw \
     --workdir /src \
     -e "PUID=$(id -u)" \
     -e "PGID=$(id -g)" \

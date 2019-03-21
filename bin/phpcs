@@ -4,6 +4,7 @@
 
 docker run --rm \
     --interactive \
+    --name="phpcs" \
     --tty \
     --net host \
     --volume `pwd`:/app \

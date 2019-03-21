@@ -1,0 +1,15 @@
+#!/bin/bash
+
+. docker-images
+
+PHPMD_IMAGE="phpqa/phpmd:latest"
+
+# e.g. phpmd . text cleancode,codesize,controversial,design,naming,unusedcode
+
+docker run --rm \
+    --interactive \
+    --name="phpmd" \
+    --tty \
+    --net host \
+    --volume `pwd`:/app \
+    "$PHPMD_IMAGE" "$@"

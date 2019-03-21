@@ -1,14 +1,16 @@
 #!/bin/bash
 
 LARAVEL_DOCKER_IMAGE="lorisleiva/laravel-docker:7.3"
+
 COMPOSER_IMAGE=$LARAVEL_DOCKER_IMAGE
+GTT_IMAGE="kriskbx/gitlab-time-tracker:latest"
 HTTPIE_IMAGE="alpine/httpie:latest"
 NODE_IMAGE="mkenney/npm:node-11-alpine"
+PHP_COMPATIBILTY_IMAGE="frbit/phpco:latest"
 PHP_IMAGE=$LARAVEL_DOCKER_IMAGE
 PHPCS_IMAGE=$LARAVEL_DOCKER_IMAGE
+PHPMD_IMAGE="phpqa/phpmd:latest"
 PHPUNIT_IMAGE=$LARAVEL_DOCKER_IMAGE
 RANCHERIZE_IMAGE="ipunktbs/rancherize:2-stable"
 RANCHERIZE_LATEST="ipunktbs/rancherize:latest"
-GTT_IMAGE="kriskbx/gitlab-time-tracker:latest"
 WIZZY_IMAGE="utkarshcmu/wizzy:latest"
-PHP_COMPATIBILTY_IMAGE="frbit/phpco:latest"

@@ -40,6 +40,7 @@ export PATH=$PATH:$HOME/dockerized/bin
 - phpco
 - phpcs
 - phpcbf
+- phpmd `phpmd . text cleancode,codesize,controversial,design,naming,unusedcode`
 
 ### Node
 

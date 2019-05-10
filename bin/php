@@ -12,9 +12,9 @@ fi
 docker run --rm \
 	 ${INTERACTIVE} \
     --net host \
-    --volume `pwd`:/app \
+    --volume "$(pwd):$(pwd)" \
     --volume /tmp:/tmp \
-    --workdir /app \
+    --workdir "$(pwd)" \
     --user $(id -u):$(id -g) \
     --entrypoint php \
     "$PHP_IMAGE" "$@"

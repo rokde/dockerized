@@ -12,8 +12,9 @@ fi
 docker run --rm \
 	 ${INTERACTIVE} \
     --net host \
-    --volume `pwd`:/app \
-    --workdir /app \
+    --volume "$(pwd):$(pwd)" \
+    --volume /tmp:/tmp \
+    --workdir "$(pwd)" \
     --user $(id -u):$(id -g) \
     --entrypoint phpunit \
     "$PHPUNIT_IMAGE" "$@"

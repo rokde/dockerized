@@ -8,6 +8,7 @@ docker run --rm \
 	 --env DIGITALOCEAN_ACCESS_TOKEN  \
     --volume $HOME/.kube:/root/.kube \
     --volume $HOME/.ssh:/root/.ssh \
+    --volume doctl-config:/root/.config/doctl \
     --volume $(pwd):$(pwd) \
     --workdir $(pwd) \
 	 --entrypoint /app/doctl \

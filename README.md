@@ -66,3 +66,4 @@ export PATH=$PATH:$HOME/dockerized/bin
 - http
 - gtt
 - wizzy
+- [cypress](https://www.cypress.io/) - acceptance testing / end-to-end testing

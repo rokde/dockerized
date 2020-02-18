@@ -14,3 +14,4 @@ PHPUNIT_IMAGE=$LARAVEL_DOCKER_IMAGE
 RANCHERIZE_IMAGE="ipunktbs/rancherize:2-stable"
 RANCHERIZE_LATEST="ipunktbs/rancherize:latest"
 WIZZY_IMAGE="utkarshcmu/wizzy:latest"
+CYPRESS_IMAGE="cypress/included:4.0.1"

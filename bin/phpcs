@@ -2,10 +2,16 @@
 
 . docker-images
 
+if tty 2>&1 > /dev/null ; then
+        INTERACTIVE="-it"
+else
+        INTERACTIVE=""
+        echo "No terminal detected, running in non-interactive mode"
+fi
+
 docker run --rm \
-    --interactive \
+	 ${INTERACTIVE} \
     --name="phpcs" \
-    --tty \
     --net host \
     --volume `pwd`:/app \
     --workdir /app \

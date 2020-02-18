@@ -1,0 +1,16 @@
+#!/bin/bash
+
+. docker-images
+
+docker run --rm \
+    --interactive \
+    --name doctl \
+	 --env DIGITALOCEAN_ACCESS_TOKEN  \
+    --volume $HOME/.kube:/root/.kube \
+    --volume $HOME/.ssh:/root/.ssh \
+    --volume doctl-config:/root/.config/doctl \
+    --volume $(pwd):$(pwd) \
+    --workdir $(pwd) \
+	 --entrypoint /app/doctl \
+    $DOCTL_IMAGE "$@"
+

@@ -11,6 +11,8 @@ fi
 
 docker run --rm \
     ${INTERACTIVE} \
+    -e "DISPLAY" \
+    --volume "/tmp:/tmp" \
     --volume "$(pwd):/e2e" \
     --workdir "/e2e" \
     "$CYPRESS_IMAGE" "$@"

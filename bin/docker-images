@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LARAVEL_DOCKER_IMAGE="lorisleiva/laravel-docker:7.3"
+LARAVEL_DOCKER_IMAGE="lorisleiva/laravel-docker:7.4"
 
 COMPOSER_IMAGE=$LARAVEL_DOCKER_IMAGE
 GTT_IMAGE="kriskbx/gitlab-time-tracker:latest"
@@ -15,4 +15,4 @@ RANCHERIZE_IMAGE="ipunktbs/rancherize:2-stable"
 RANCHERIZE_LATEST="ipunktbs/rancherize:latest"
 WIZZY_IMAGE="utkarshcmu/wizzy:latest"
 DOCTL_IMAGE="digitalocean/doctl:1.31.2"
-CYPRESS_IMAGE="cypress/included:4.0.1"
+CYPRESS_IMAGE="cypress/included:4.3.0"

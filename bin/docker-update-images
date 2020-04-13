@@ -11,3 +11,6 @@ docker pull $RANCHERIZE_LATEST
 docker pull $GTT_IMAGE
 docker pull $WIZZY_IMAGE
 docker pull $PHP_COMPATIBILTY_IMAGE
+docker pull $PHPMD_IMAGE
+docker pull $DOCTL_IMAGE
+docker pull $CYPRESS_IMAGE

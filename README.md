@@ -41,6 +41,7 @@ export PATH=$PATH:$HOME/dockerized/bin
 - phpcs
 - phpcbf
 - phpmd `phpmd . text cleancode,codesize,controversial,design,naming,unusedcode`
+- [phpstan](https://phpstan.org/) `phpstan analyse [folder]`
 
 ### Node
 

@@ -2,10 +2,10 @@
 
 LARAVEL_DOCKER_IMAGE="lorisleiva/laravel-docker:7.4"
 
-COMPOSER_IMAGE=$LARAVEL_DOCKER_IMAGE
+COMPOSER_IMAGE="composer:2"
 GTT_IMAGE="kriskbx/gitlab-time-tracker:latest"
 HTTPIE_IMAGE="alpine/httpie:latest"
-NODE_IMAGE="mkenney/npm:node-11-alpine"
+NODE_IMAGE="mkenney/npm:node-10-alpine"
 PHP_COMPATIBILTY_IMAGE="frbit/phpco:latest"
 PHP_IMAGE=$LARAVEL_DOCKER_IMAGE
 PHPCS_IMAGE=$LARAVEL_DOCKER_IMAGE

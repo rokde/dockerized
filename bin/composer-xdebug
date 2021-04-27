@@ -1,0 +1,21 @@
+#!/bin/bash
+
+. configuration
+
+COMPOSER_IMAGE="mrodler/php-composer-xdebug:8.0-fpm-alpine"
+
+if [[ ! -d "$COMPOSER_CACHE_DIR" ]]; then
+    mkdir -p "$COMPOSER_CACHE_DIR"
+fi
+
+docker run --rm \
+    --interactive \
+    --tty \
+    --net host \
+    --volume `pwd`:/opt \
+    --volume "$COMPOSER_CACHE_DIR":/.composer:rw \
+    --volume "$COMPOSER_CACHE_DIR":/composer:rw \
+    -w /opt \
+    --user $(id -u):$(id -g) \
+    --entrypoint composer \
+    "$COMPOSER_IMAGE" "$@"
